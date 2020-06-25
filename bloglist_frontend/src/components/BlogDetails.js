@@ -5,6 +5,7 @@ import { initBlogs } from '../store/blog/actions';
 import { deleteBlog, updateBlog } from '../store/blog/actions';
 import { useHistory } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
+import Comment from './Comment';
 
 const BlogDetails = ({ blogId }) => {
   const history = useHistory();
@@ -84,32 +85,10 @@ const BlogDetails = ({ blogId }) => {
               remove
             </Button>
           ) : null}
+          <Comment blogId={blogId} />
         </div>
       </Card.Body>
     </Card>
-    // <div>
-    //   <h2>{blog.title}</h2>
-    //   <div className="details">
-    //     <div className="url">
-    //       <a href={blog.url}>{blog.url}</a>
-    //     </div>
-    //     <div className="likes">
-    //       likes {blog.likes}
-    //       <button className={'likeButton'} onClick={() => onBlogLiked()}>
-    //         like
-    //       </button>
-    //     </div>
-    //     {blog.user ? (
-    //       <div className="userName">added by {blog.user.name}</div>
-    //     ) : null}
-    //     {canRemove() ? (
-    //       <button className={'removeButton'} onClick={() => onBlogDeleted()}>
-    //         remove
-    //       </button>
-    //     ) : null}
-    //   </div>
-    //   <h3>comments</h3>
-    // </div>
   );
 };
 

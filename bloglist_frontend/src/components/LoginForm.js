@@ -11,21 +11,31 @@ const LoginForm = () => {
     event.preventDefault();
     dispatch(login(username, password));
   };
+  const formControlStyle = {
+    width: '200px',
+    height: '25px',
+  };
+
+  const formLabelStyle = {
+    marginBottom: '0px',
+  };
   return (
     <div>
       <h2>Login</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
-          <Form.Label> username:</Form.Label>
+          <Form.Label style={formLabelStyle}> username:</Form.Label>
           <Form.Control
+            style={formControlStyle}
             id="username"
             type="text"
             value={username}
             name="Username"
             onChange={({ target }) => setUsername(target.value)}
           />
-          <Form.Label> password:</Form.Label>
+          <Form.Label style={formLabelStyle}> password:</Form.Label>
           <Form.Control
+            style={formControlStyle}
             id="password"
             type="password"
             value={password}

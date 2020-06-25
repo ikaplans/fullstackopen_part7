@@ -44,7 +44,7 @@ const App = () => {
       >
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav classname="mr-auto">
+          <Nav className="mr-auto">
             <Nav.Link href="#" as="span">
               <Link style={padding} to="/">
                 blogs

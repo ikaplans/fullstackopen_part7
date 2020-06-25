@@ -33,6 +33,20 @@ export const addBlog = (blog) => {
   };
 };
 
+export const addComment = (blogId, comment) => {
+  return async (dispatch) => {
+    try {
+      const updatedBlog = await blogService.postCommentAsync(blogId, comment);
+      return dispatch({
+        type: 'UPDATE',
+        data: updatedBlog,
+      });
+    } catch (exception) {
+      dispatch(setNotification('Error while adding a comment', 5, true));
+    }
+  };
+};
+
 export const deleteBlog = (blog) => {
   return async (dispatch) => {
     try {

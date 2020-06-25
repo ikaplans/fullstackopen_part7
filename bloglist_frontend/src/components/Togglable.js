@@ -1,5 +1,6 @@
 import React, { useState, useImperativeHandle } from 'react';
 import { Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 const Togglable = React.forwardRef((props, ref) => {
   Togglable.displayName = 'Togglable';
@@ -50,5 +51,13 @@ const Togglable = React.forwardRef((props, ref) => {
     </div>
   );
 });
+
+Togglable.propTypes = {
+  children: PropTypes.object,
+  header: PropTypes.string,
+  buttonCloseLabel: PropTypes.string,
+  buttonOpenLabel: PropTypes.string,
+  buttonPosition: PropTypes.string,
+};
 
 export default Togglable;
